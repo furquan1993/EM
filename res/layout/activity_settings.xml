@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="@color/background">
+    
+        <TextView
+        android:id="@+id/txtSettingsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/settings_title"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#000000" />
+
+    <View
+        android:id="@+id/divider0"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/txtSettingsTitle"
+        android:layout_marginTop="20dp"
+        android:background="#000001" />
+
+    <TextView
+        android:id="@+id/txtCurrencySetting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/divider0"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="Garamond"
+        android:text="@string/currency_text"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/txtCurrencySetting"
+        android:layout_marginLeft="12dp"
+        android:fontFamily="Garamond"
+        android:text="Rs."
+        android:textColor="@color/grey"
+        android:textSize="14sp" />
+
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/txtCurrencySetting"
+        android:layout_marginTop="22dp"
+        android:background="#000001" />
+
+    <TextView
+        android:id="@+id/txtReminderSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/divider1"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="Garamond"
+        android:text="@string/reminder_text"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/txtReminderTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/txtReminderSettings"
+        android:layout_marginLeft="12dp"
+        android:fontFamily="Garamond"
+        android:text=""
+        android:textColor="@color/grey"
+        android:textSize="14sp" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/txtReminderSettings"
+        android:layout_marginTop="22dp"
+        android:background="#000001" />
+    
+    <TextView
+        android:id="@+id/txtCategorySettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/divider2"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="Garamond"
+        android:text="@string/category_text"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/txtCategorySettings"
+        android:layout_marginTop="15dp"
+        android:background="#000001" />
+    
+    
+    
+    
+    
+
+</RelativeLayout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:gravity="top"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/txtSummaryTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/summary_title"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#000000" />
+
+    <Spinner
+        android:id="@+id/spinMonthSummary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtSummaryTitle"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:spinnerMode="dropdown" />
+
+    <TextView
+        android:id="@+id/txtTotalExpense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/spinMonthSummary"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/expense" />
+
+    <TextView
+        android:id="@+id/txtTotalSavingsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/spinMonthSummary"
+        android:layout_below="@+id/spinMonthSummary"
+        android:layout_marginTop="10dp"
+        android:text="@string/total_savings_label_text"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/savings"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/txtMonthlySavingsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtTotalSavings"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:text="@string/monthly_savings_label_text"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/savings"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/txtMonthlySavings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/txtTotalSavings"
+        android:layout_alignRight="@id/txtMonthlySavingsLabel"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/savings"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/txtTotalSavings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtTotalSavingsLabel"
+        android:layout_below="@+id/txtTotalSavingsLabel"
+        android:layout_marginTop="5dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/savings"
+        android:textSize="20sp" />
+
+</RelativeLayout>

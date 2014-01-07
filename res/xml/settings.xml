@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <EditTextPreference
+        android:key="currency"
+        android:summary="Choose the currency"
+        android:title="@string/currency_text" />
+    <EditTextPreference
+        android:key="reminder"
+        android:summary="Set the reminder(if any)"
+        android:title="@string/reminder_text" />
+    <EditTextPreference
+        android:key="catergories_setting"
+        android:summary="Edit the categories"
+        android:title="@string/category_text" />
+
+</PreferenceScreen>
