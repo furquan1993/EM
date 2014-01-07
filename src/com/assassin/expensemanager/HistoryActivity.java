@@ -28,13 +28,15 @@ public class HistoryActivity extends Activity {
 
 		// Initializing DBs and cursors
 		SQLiteDatabase expenses = MainActivity.expensesDb.getReadableDatabase();
-		String sql = "Select Date, category, description, amount from " + ExpenseDBHelper.tableName;
+		String sql = "Select * from " + ExpenseDBHelper.tableName;
 		Cursor cursor = expenses.rawQuery(sql, null);
 
-		// Setting Views
+		showList(cursor);
+		
+		// Displaying History of expenses.
 		try {
-			showText(cursor);
-			showList(cursor);
+			//showText(cursor);
+			
 		} catch (Exception e) {
 			Log.d("HistoryActivity", e.getStackTrace().toString());
 			txtHistory.setText(e.getStackTrace().toString());
@@ -42,6 +44,7 @@ public class HistoryActivity extends Activity {
 
 	}
 
+	//Function to check if the DB is working.
 	private void showText(Cursor cursor) {
 		StringBuilder txt = new StringBuilder("");
 		cursor.moveToFirst();
@@ -59,6 +62,7 @@ public class HistoryActivity extends Activity {
 
 	}
 
+	//Function to populate the list
 	private void showList(Cursor cursor) {
 
 		String[] fromColumns = new String[4];

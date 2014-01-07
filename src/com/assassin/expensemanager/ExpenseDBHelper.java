@@ -20,7 +20,7 @@ public class ExpenseDBHelper extends SQLiteOpenHelper {
 	public void onCreate(SQLiteDatabase db) {
 		db.execSQL("Create table "
 				+ tableName
-				+ "(id integer primary key autoincrement, Date date, Category integer, Description text, Amount real)");
+				+ "(_id integer primary key autoincrement, Date date, Category integer, Description text, Amount real)");
 
 	}
 
