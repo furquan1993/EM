@@ -3,9 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background" >
-    
+
     <TextView
-        android:id="@+id/txtAddExpenseTitle"
+        android:id="@+id/txtHistoryTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -16,19 +16,46 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#000000" />
 
-    <TextView
-        android:id="@+id/txtHistory"
+    <ImageView
+        android:id="@+id/btnHistoryAddExpense"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txtAddExpenseTitle"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="52dp"
-        />
-    
-    <ListView android:id="@+id/lvHistoryDetails"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="17dp"
+        android:contentDescription="@string/add_expense_title_text"
+        android:src="@android:drawable/ic_input_add" />
+
+    <Spinner
+        android:id="@+id/spinCategorySelector"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txtHistory"
-        android:layout_centerHorizontal="true"/>
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/txtHistoryTitle"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp" />
+
+    <View
+        android:id="@+id/history_divider1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/spinCategorySelector"
+        android:layout_marginTop="10dp"
+        android:background="@color/black" />
+
+    <ListView
+        android:id="@+id/lvHistoryDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/history_divider1"
+        android:layout_centerHorizontal="true" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/lvHistoryDetails"
+        android:background="@color/black" />
 
 </RelativeLayout>

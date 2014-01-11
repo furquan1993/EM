@@ -3,13 +3,21 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content" >
 
-    <TextView
-        android:id="@+id/txtHistoryCategory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
+    <View
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentTop="true"
+        android:background="@color/black"
+        android:padding="1dp" />
+
+    <View
+        android:id="@+id/viewHistoryCategory"
+        android:layout_width="59dp"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:padding="1dp" />
 
     <TextView
         android:id="@+id/txtHistoryDate"
@@ -17,10 +25,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="5dp"
-        android:textColor="@color/black"
         android:layout_marginTop="5dp"
-        android:layout_toRightOf="@id/txtHistoryCategory"
-        android:textSize="20sp" />
+        android:layout_toRightOf="@id/viewHistoryCategory"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/txtHistoryDescription"
@@ -29,18 +37,19 @@
         android:layout_below="@id/txtHistoryDate"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
-        android:layout_toRightOf="@id/txtHistoryCategory"
+        android:layout_toRightOf="@id/viewHistoryCategory"
         android:textColor="@color/grey"
         android:textSize="14sp" />
-    
-    <TextView android:id="@+id/txtHistoryAmount"
+
+    <TextView
+        android:id="@+id/txtHistoryAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:textColor="@color/expense"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginTop="15dp"
+        android:textColor="@color/expense"
+        android:textSize="20sp" />
 
 </RelativeLayout>

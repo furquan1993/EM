@@ -30,4 +30,8 @@
 	<string name="settings_title">Settings</string>
 	<string name="reminder_text">Daily Reminder</string>
 	<string name="currency_text">Currency</string>
+	<string name="clear_text">Clear</string>
+	<string name="limit_text">"Limit: "</string>
+	<string name="ok_btn_text">OK</string>
+	<string name="delete_btn_text">Delete</string>
 </resources>
