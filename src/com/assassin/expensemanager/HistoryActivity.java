@@ -32,7 +32,7 @@ public class HistoryActivity extends Activity {
 	private SQLiteDatabase expenses;
 	private final String sql = "Select * from "
 			+ ExpenseDBHelper.tableNameExpenses
-			+ " ORDER BY Date DESC, _id DESC";
+			+ " ORDER BY _id DESC, Date DESC";
 	private String[] categories;
 
 	@Override

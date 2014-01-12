@@ -3,6 +3,7 @@
     android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/background"
     android:orientation="vertical" >
 
     <TextView
@@ -12,9 +13,10 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:textColor="@color/black"
-        android:textSize="18sp" />
+        android:textSize="17sp"
+        android:textStyle="italic" />
 
     <TextView
         android:id="@+id/txtCategoryAmountSummary"
@@ -24,24 +26,32 @@
         android:layout_marginLeft="10dp"
         android:layout_toRightOf="@+id/txtCategoryNameSummary"
         android:textColor="@color/black"
-        android:textSize="18sp" />
+        android:textSize="17sp"
+        android:textStyle="italic" />
 
-    <View
+    <TextView
         android:id="@+id/viewBarBorder"
-        android:layout_width="110dp"
-        android:layout_height="60dp"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
         android:layout_alignLeft="@id/txtCategoryNameSummary"
         android:layout_below="@id/txtCategoryNameSummary"
         android:background="@color/black" />
 
-    <View
+    <TextView
         android:id="@+id/viewBar"
-        android:layout_width="107dp"
-        android:layout_height="57dp"
+        android:layout_width="wrap_content"
+        android:layout_height="18dp"
         android:layout_alignLeft="@id/txtCategoryNameSummary"
         android:layout_below="@id/txtCategoryNameSummary"
         android:layout_marginLeft="1dp"
         android:layout_marginTop="1dp"
         android:background="@color/savings" />
+
+    <TextView
+        android:id="@+id/viewMarginBar"
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:layout_below="@+id/viewBarBorder" >
+    </TextView>
 
 </RelativeLayout>

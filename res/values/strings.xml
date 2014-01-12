@@ -21,7 +21,7 @@
 	<string name="add_btn_text">Add</string>
 	<string name="cancel_btn_text">Cancel</string>
 	<string name="summary_title">Summary</string>
-	<string name="limits_title">Limits</string>
+	<string name="category_title">Category</string>
 	<string name="history_title">History</string>
 	<string name="settings_text">Settings</string>
 	<string name="total_expense_text">Rs. 2930</string>
@@ -34,4 +34,5 @@
 	<string name="limit_text">"Limit: "</string>
 	<string name="ok_btn_text">OK</string>
 	<string name="delete_btn_text">Delete</string>
+	<string name="add_category">Add Category</string>
 </resources>

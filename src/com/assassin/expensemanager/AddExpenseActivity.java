@@ -67,8 +67,8 @@ public class AddExpenseActivity extends Activity {
 							@Override
 							public void onDateSet(DatePicker view, int year,
 									int monthOfYear, int dayOfMonth) {
-								etxtDate.setText(dayOfMonth + "/"
-										+ (monthOfYear + 1) + "/" + year);
+								etxtDate.setText(year + "-"
+										+ (monthOfYear + 1) + "-" + dayOfMonth);
 
 							}
 						}, date.get(Calendar.YEAR), date.get(Calendar.MONTH),

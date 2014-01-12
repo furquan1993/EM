@@ -103,7 +103,7 @@ class SelectActivity implements OnClickListener {
 			Intent intent = new Intent(v.getContext(), HistoryActivity.class);
 			v.getContext().startActivity(intent);
 		} else if (id == R.id.btnLimits) {
-			Intent intent = new Intent(v.getContext(), LimitsActivity.class);
+			Intent intent = new Intent(v.getContext(), CategoryActivity.class);
 			v.getContext().startActivity(intent);
 		} else if (id == R.id.btnExit) {
 			((MainActivity) v.getContext()).finish();

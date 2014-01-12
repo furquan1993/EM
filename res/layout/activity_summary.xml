@@ -25,7 +25,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/txtSummaryTitle"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        android:textSize="22sp" />
 
     <TextView
         android:id="@+id/txtTotalExpense"
@@ -35,15 +37,19 @@
         android:layout_alignParentRight="true"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/expense" />
+        android:textColor="@color/expense"
+        android:textSize="20sp"
+        android:textStyle="italic" />
 
     <ListView
         android:id="@+id/lvSummaryDetails"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtMonthSummary"
-        android:layout_marginTop="30dp" >
+        android:layout_marginTop="30dp"
+        android:clickable="false"
+        android:divider="@color/background"
+        android:dividerHeight="0dp" >
     </ListView>
 
 </RelativeLayout>

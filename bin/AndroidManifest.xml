@@ -38,8 +38,8 @@
             android:label="@string/history_title"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
-            android:name="com.assassin.expensemanager.LimitsActivity"
-            android:label="@string/limits_title"
+            android:name="com.assassin.expensemanager.CategoryActivity"
+            android:label="@string/category_title"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
             android:name="com.assassin.expensemanager.SettingsActivity"
