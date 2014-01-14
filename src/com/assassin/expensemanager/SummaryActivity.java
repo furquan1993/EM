@@ -76,16 +76,22 @@ public class SummaryActivity extends Activity {
 									+ ExpenseDBHelper.tableNameCategories, null);
 
 			// Setting up the memory for the arrays defined for calculations
-			categories = new String[category.getCount()];
-			amounts = new double[category.getCount()];
-			for (int j = 0; j < amounts.length; j++) {
+			int size = category.getCount();
+			Log.d("Size: ", cursor.getCount() + "");
+			categories = new String[size];
+			amounts = new double[size];
+			colors = new int[size];
+			percentages = new int[size];
+
+			// Initializing Amount array
+			for (int j = 0; j < size; j++) {
 				amounts[j] = 0;
 			}
-			percentages = new int[amounts.length];
-			for (int j = 0; j < amounts.length; j++) {
+
+			// Initializing Percentage array.
+			for (int j = 0; j < size; j++) {
 				percentages[j] = 0;
 			}
-			colors = new int[category.getCount()];
 
 			// Performing required Calculations
 			// Setting the strings and colors
@@ -101,14 +107,16 @@ public class SummaryActivity extends Activity {
 			// Calculating amount for each category
 			while (cursor.moveToNext()) {
 				i = 0;
-				while (!(cursor.getString(2).equals(categories[i]))) {
+				while (i < size && !(cursor.getString(2).equals(categories[i]))){
 					i++;
 				}
 				amounts[i] += cursor.getDouble(4);
+				Log.d("SummaryActivity amount: ", amounts[i] + "");
 			}
 
-			for (int j = 0; j < amounts.length; j++)
-				Log.d("SummaryActivityAmounts" + categories[j], amounts[j] + "");
+			for (int j = 0; j < size; j++)
+				Log.d("SummaryActivityAmounts " + categories[j], amounts[j]
+						+ "");
 
 			// Calculating percentages for each category
 			double max = amounts[0];
@@ -126,7 +134,7 @@ public class SummaryActivity extends Activity {
 			// Creating set of objects to feed the lvSummaryDetails
 			int count = 0;
 			for (int j = 0; j < amounts.length; j++)
-				if(amounts[j] > 0)
+				if (amounts[j] > 0)
 					count++;
 			SummarySet[] sets = new SummarySet[count];
 			count = 0;

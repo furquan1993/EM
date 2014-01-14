@@ -10,8 +10,9 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.CursorAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -20,17 +21,49 @@ public class CategoryActivity extends Activity {
 
 	private ListView lvCategory;
 	private SQLiteDatabase expenseDb;
+	static final String categoryColor = "CategoryActivity.Color";
+	static final String categoryName = "CategoryActivity.Name";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_category);
 		lvCategory = (ListView) findViewById(R.id.lvCategory);
-		expenseDb = MainActivity.expensesDb.getWritableDatabase();
+
+		expenseDb = MainActivity.expensesDb.getReadableDatabase();
 		Cursor cursor = expenseDb.rawQuery("Select * from "
 				+ ExpenseDBHelper.tableNameCategories, null);
+
 		lvCategory.setAdapter(new CategoryAdaper(getApplicationContext(),
 				cursor, true));
+		lvCategory.setClickable(true);
+
+		lvCategory.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> adapter, View view,
+					int position, long id) {
+				TextView tvColor = (TextView) view
+						.findViewById(R.id.viewCategoryColor);
+				TextView tvName = (TextView) view
+						.findViewById(R.id.txtCategoryName);
+				int color = (Integer) tvColor.getTag();
+				String name = tvName.getText().toString();
+
+				Intent intent = new Intent(CategoryActivity.this,
+						EditCategoryActivity.class);
+				intent.putExtra(categoryName, name);
+				intent.putExtra(categoryColor, color);
+				startActivity(intent);
+			}
+		});
+	}
+
+	public void CreateNew(View view) {
+		Intent intent = new Intent(this, EditCategoryActivity.class);
+		intent.putExtra(categoryColor, 0);
+		intent.putExtra(categoryName, "");
+		startActivity(intent);
 	}
 
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -56,6 +89,17 @@ public class CategoryActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
+	@Override
+	protected void onResume() {
+		super.onResume();
+		expenseDb = MainActivity.expensesDb.getReadableDatabase();
+		Cursor cursor = expenseDb.rawQuery("Select * from "
+				+ ExpenseDBHelper.tableNameCategories, null);
+		lvCategory.setAdapter(new CategoryAdaper(getApplicationContext(),
+				cursor, true));
+
+	}
+
 }
 
 class CategoryAdaper extends CursorAdapter {
@@ -76,14 +120,8 @@ class CategoryAdaper extends CursorAdapter {
 
 		txtCategoryName.setText(cursor.getString(1).toString());
 		viewCategoryColor.setBackgroundColor(cursor.getInt(2));
-		
-		txtCategoryName.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				
-			}
-		});
+		viewCategoryColor.setTag(cursor.getInt(2));
+
 	}
 
 	@Override

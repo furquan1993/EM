@@ -32,7 +32,7 @@ public class HistoryActivity extends Activity {
 	private SQLiteDatabase expenses;
 	private final String sql = "Select * from "
 			+ ExpenseDBHelper.tableNameExpenses
-			+ " ORDER BY _id DESC, Date DESC";
+			+ " ORDER BY  Date DESC";
 	private String[] categories;
 
 	@Override
@@ -77,10 +77,10 @@ public class HistoryActivity extends Activity {
 		categories = new String[category.getCount() + 1];
 		categories[0] = "All";
 		try {
-			category.moveToFirst();
-			do {
-				categories[category.getInt(0)] = category.getString(1);
-			} while (category.moveToNext());
+			int count = 1;
+			while(category.moveToNext()){
+				categories[count++] = category.getString(1);
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -100,14 +100,15 @@ public class HistoryActivity extends Activity {
 						String where = " where Category=\'"
 								+ tv.getText().toString() + "\'";
 						if (tv.getText().toString().equals("All")) {
-							where = "";
+							where = " ";
 						}
+						String order = " ORDER BY Date DESC, _id DESC";
 						Cursor cursor = MainActivity.expensesDb
 								.getReadableDatabase()
 								.rawQuery(
 										"select * from "
 												+ ExpenseDBHelper.tableNameExpenses
-												+ where, null);
+												+ where + order, null);
 						showList(cursor);
 					}
 

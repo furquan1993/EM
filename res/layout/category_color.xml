@@ -1,0 +1,23 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp" >
+
+    <TextView
+        android:id="@+id/viewColorBorder"
+        android:layout_width="112dp"
+        android:layout_height="32dp"
+        android:layout_centerHorizontal="true"
+        android:background="@color/black" />
+
+    <TextView
+        android:id="@+id/viewColor"
+        android:layout_width="110dp"
+        android:layout_height="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/expense"
+        android:padding="2dp" />
+
+</RelativeLayout>

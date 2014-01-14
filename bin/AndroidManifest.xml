@@ -45,6 +45,12 @@
             android:name="com.assassin.expensemanager.SettingsActivity"
             android:label="@string/settings_title"
             android:theme="@android:style/Theme.NoTitleBar" />
+        
+        <activity
+            android:name="com.assassin.expensemanager.EditCategoryActivity"
+            android:label="@string/edit_category_title"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
     </application>
 
 </manifest>

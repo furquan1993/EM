@@ -73,6 +73,7 @@ public class MainActivity extends Activity {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	
 	}
 
 	@Override
@@ -94,7 +95,7 @@ class SelectActivity implements OnClickListener {
 		int id = v.getId();
 		if (id == R.id.btnAddExpense) {
 			Intent intent = new Intent(v.getContext(), AddExpenseActivity.class);
-			intent.putExtra(MainActivity.ID , "0");
+			intent.putExtra(MainActivity.ID, "0");
 			v.getContext().startActivity(intent);
 		} else if (id == R.id.btnSummary) {
 			Intent intent = new Intent(v.getContext(), SummaryActivity.class);
@@ -106,7 +107,7 @@ class SelectActivity implements OnClickListener {
 			Intent intent = new Intent(v.getContext(), CategoryActivity.class);
 			v.getContext().startActivity(intent);
 		} else if (id == R.id.btnExit) {
-			((MainActivity) v.getContext()).finish();
+			System.exit(0);
 		}
 
 	}
